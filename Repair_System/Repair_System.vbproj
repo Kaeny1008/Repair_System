@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0011924-6884-4CF3-9483-CD0DA0147E09}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Repair_System.My.MyApplication</StartupObject>
+    <RootNamespace>Repair_System</RootNamespace>
+    <AssemblyName>Repair_System</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Repair_System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Repair_System.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Report.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=594a0605db190bb9" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1Report.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1ReportDesigner.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=fb528571dbff5bd2, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Add DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RegistryEdit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Add DLL\RegistryEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Baking\frm_Baking_History.Designer.vb">
+      <DependentUpon>frm_Baking_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Baking\frm_Baking_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Baking\frm_Work_Baking.Designer.vb">
+      <DependentUpon>frm_Work_Baking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Baking\frm_Work_Baking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_LoadingImage.Designer.vb">
+      <DependentUpon>frm_LoadingImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_LoadingImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Main.Designer.vb">
+      <DependentUpon>frm_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_Sub.Designer.vb">
+      <DependentUpon>frm_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_Sub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_RePrint.Designer.vb">
+      <DependentUpon>frm_IQC_RePrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_RePrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_Print.Designer.vb">
+      <DependentUpon>frm_IQC_Print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_Print.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_Standby_List.Designer.vb">
+      <DependentUpon>frm_IQC_Standby_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IQC\frm_IQC_Standby_List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kitting and Moving\frm_Parts_Kitting.Designer.vb">
+      <DependentUpon>frm_Parts_Kitting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kitting and Moving\frm_Parts_Kitting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Grid_String_Find.Designer.vb">
+      <DependentUpon>frm_Grid_String_Find.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Grid_String_Find.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Lot_Total_Information.Designer.vb">
+      <DependentUpon>frm_Lot_Total_Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Lot_Total_Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_PartNo_Information.Designer.vb">
+      <DependentUpon>frm_Material_PartNo_Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_PartNo_Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_LotNo_Information.Designer.vb">
+      <DependentUpon>frm_Material_LotNo_Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_LotNo_Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_Total_Information.Designer.vb">
+      <DependentUpon>frm_Material_Total_Information.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_Total_Information.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_Use_History.Designer.vb">
+      <DependentUpon>frm_Material_Use_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Material_Use_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monthly Production Report\frm_Monthly_Production_Data.Designer.vb">
+      <DependentUpon>frm_Monthly_Production_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monthly Production Report\frm_Monthly_Production_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Monthly Production Report\frm_Monthly_Production_Report.Designer.vb">
+      <DependentUpon>frm_Monthly_Production_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Monthly Production Report\frm_Monthly_Production_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_Out_PDA.Designer.vb">
+      <DependentUpon>frm_Module_Out_PDA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_Out_PDA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_OMS_Ship_Data.Designer.vb">
+      <DependentUpon>frm_OMS_Ship_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_OMS_Ship_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reject Material\frm_Reject_IC_In.Designer.vb">
+      <DependentUpon>frm_Reject_IC_In.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reject Material\frm_Reject_IC_In.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reject Material\frm_Reject_IC_Ship.Designer.vb">
+      <DependentUpon>frm_Reject_IC_Ship.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reject Material\frm_Reject_IC_Ship.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SMT Manager\frm_MisCheck_Result.Designer.vb">
+      <DependentUpon>frm_MisCheck_Result.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SMT Manager\frm_MisCheck_Result.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SMT Manager\frm_SMT_Working_History.Designer.vb">
+      <DependentUpon>frm_SMT_Working_History.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SMT Manager\frm_SMT_Working_History.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\MyGCCollectClass.vb" />
+    <Compile Include="Reports\frm_Report_Print.Designer.vb">
+      <DependentUpon>frm_Report_Print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\frm_Report_Print.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Kitting and Moving\frm_WorkSite_Moving.Designer.vb">
+      <DependentUpon>frm_WorkSite_Moving.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Kitting and Moving\frm_WorkSite_Moving.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_In_Add.Designer.vb">
+      <DependentUpon>frm_Module_In_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_In_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_Out_Add.Designer.vb">
+      <DependentUpon>frm_Module_Out_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Module_Out_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_OMS_WIP_Data.Designer.vb">
+      <DependentUpon>frm_OMS_WIP_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_OMS_WIP_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Material_In_Add.Designer.vb">
+      <DependentUpon>frm_Material_In_Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\frm_Material_In_Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_P_First_Popup.Designer.vb">
+      <DependentUpon>frm_P_First_Popup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_P_First_Popup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_First_Popup.Designer.vb">
+      <DependentUpon>frm_M_First_Popup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_First_Popup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\Multi_Row.Designer.vb">
+      <DependentUpon>Multi_Row.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\Multi_Row.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_Second_Popup.Designer.vb">
+      <DependentUpon>frm_M_Second_Popup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_Second_Popup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_Third_Popup.Designer.vb">
+      <DependentUpon>frm_M_Third_Popup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts InOut Manager\Popup\frm_M_Third_Popup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_Bucket_RCD_PMIC.Designer.vb">
+      <DependentUpon>frm_Bucket_RCD_PMIC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_Bucket_RCD_PMIC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_Code_Manager.Designer.vb">
+      <DependentUpon>frm_Code_Manager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_Code_Manager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_LabelPrinter.Designer.vb">
+      <DependentUpon>frm_LabelPrinter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_LabelPrinter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_OMS_File_Data.Designer.vb">
+      <DependentUpon>frm_OMS_File_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_OMS_File_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_PG_Upload.Designer.vb">
+      <DependentUpon>frm_PG_Upload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_PG_Upload.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_SQL_Conn.Designer.vb">
+      <DependentUpon>frm_SQL_Conn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting Forms\frm_SQL_Conn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\md_ETC.vb" />
+    <Compile Include="Module\md_FTP.vb" />
+    <Compile Include="Module\md_MySQL_Connection.vb" />
+    <Compile Include="Module\PrinterRaw.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\rpt_Module_Ship_Check.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Module_Ship_Check.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt_Reject_Material_Ship.vb">
+      <DependentUpon>rpt_Reject_Material_Ship.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\rpt_Module_Ship.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Module_Ship.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt_Module_Ship_Parts.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Module_Ship_Parts.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rpt_Reject_Material_Ship_Summary.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Reject_Material_Ship_Summary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkSite Moving.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkSite Moving.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Baking\frm_Baking_History.resx">
+      <DependentUpon>frm_Baking_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Baking\frm_Work_Baking.resx">
+      <DependentUpon>frm_Work_Baking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_LoadingImage.resx">
+      <DependentUpon>frm_LoadingImage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Main.resx">
+      <DependentUpon>frm_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_Sub.resx">
+      <DependentUpon>frm_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IQC\frm_IQC_RePrint.resx">
+      <DependentUpon>frm_IQC_RePrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IQC\frm_IQC_Print.resx">
+      <DependentUpon>frm_IQC_Print.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\IQC\frm_IQC_Standby_List.resx">
+      <DependentUpon>frm_IQC_Standby_List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kitting and Moving\frm_Parts_Kitting.resx">
+      <DependentUpon>frm_Parts_Kitting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Grid_String_Find.resx">
+      <DependentUpon>frm_Grid_String_Find.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Lot_Total_Information.resx">
+      <DependentUpon>frm_Lot_Total_Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Material_LotNo_Information.resx">
+      <DependentUpon>frm_Material_LotNo_Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Material_PartNo_Information.resx">
+      <DependentUpon>frm_Material_PartNo_Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Material_Total_Information.resx">
+      <DependentUpon>frm_Material_Total_Information.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Material_Use_History.resx">
+      <DependentUpon>frm_Material_Use_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monthly Production Report\frm_Monthly_Production_Data.resx">
+      <DependentUpon>frm_Monthly_Production_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Monthly Production Report\frm_Monthly_Production_Report.resx">
+      <DependentUpon>frm_Monthly_Production_Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_Module_Out_PDA.resx">
+      <DependentUpon>frm_Module_Out_PDA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_OMS_Ship_Data.resx">
+      <DependentUpon>frm_OMS_Ship_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reject Material\frm_Reject_IC_In.resx">
+      <DependentUpon>frm_Reject_IC_In.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reject Material\frm_Reject_IC_Ship.resx">
+      <DependentUpon>frm_Reject_IC_Ship.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SMT Manager\frm_MisCheck_Result.resx">
+      <DependentUpon>frm_MisCheck_Result.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SMT Manager\frm_SMT_Working_History.resx">
+      <DependentUpon>frm_SMT_Working_History.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frm_Report_Print.resx">
+      <DependentUpon>frm_Report_Print.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Kitting and Moving\frm_WorkSite_Moving.resx">
+      <DependentUpon>frm_WorkSite_Moving.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_Module_In_Add.resx">
+      <DependentUpon>frm_Module_In_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_Module_Out_Add.resx">
+      <DependentUpon>frm_Module_Out_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_OMS_WIP_Data.resx">
+      <DependentUpon>frm_OMS_WIP_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\frm_Material_In_Add.resx">
+      <DependentUpon>frm_Material_In_Add.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\Popup\frm_P_First_Popup.resx">
+      <DependentUpon>frm_P_First_Popup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\Popup\frm_M_First_Popup.resx">
+      <DependentUpon>frm_M_First_Popup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\Popup\Multi_Row.resx">
+      <DependentUpon>Multi_Row.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\Popup\frm_M_Second_Popup.resx">
+      <DependentUpon>frm_M_Second_Popup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts InOut Manager\Popup\frm_M_Third_Popup.resx">
+      <DependentUpon>frm_M_Third_Popup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_Bucket_RCD_PMIC.resx">
+      <DependentUpon>frm_Bucket_RCD_PMIC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_Code_Manager.resx">
+      <DependentUpon>frm_Code_Manager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_LabelPrinter.resx">
+      <DependentUpon>frm_LabelPrinter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_OMS_FILE_DATA.resx">
+      <DependentUpon>frm_OMS_File_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_PG_Upload.resx">
+      <DependentUpon>frm_PG_Upload.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting Forms\frm_SQL_Conn.resx">
+      <DependentUpon>frm_SQL_Conn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt_Module_Ship_Check.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Module_Ship_Check.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt_Reject_Material_Ship.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Reject_Material_Ship.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt_Module_Ship.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Module_Ship.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt_Module_Ship_Parts.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Module_Ship_Parts.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rpt_Reject_Material_Ship_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Reject_Material_Ship_Summary.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\WorkSite Moving.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WorkSite Moving.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_double.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXCEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_beige.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sitemap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity Monitor_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-database_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-database_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Autoship_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Autoship_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-2d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bytecode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globe-Download_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Open-Folder-Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-history_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order-history_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordering_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordering_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordering_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordering_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordering_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_settings_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-blue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-blue-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Process-Info_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Process-Warning_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product-sales-report_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-from-database_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_add2_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_delete2_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star-Full_128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vmware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\web-management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YUJIN_Logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TEST_FOLDER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PMIC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RCD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HearCount1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HearCount2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SRB CRB Test Fail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map Out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PMIC Reg FAIL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\None Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mounter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RCD Count.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
