@@ -154,6 +154,12 @@
     <Compile Include="Forms\Lot Status Information\frm_Grid_String_Find.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Lot_Residence_Time.Designer.vb">
+      <DependentUpon>frm_Lot_Residence_Time.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lot Status Information\frm_Lot_Residence_Time.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Lot Status Information\frm_Lot_Total_Information.Designer.vb">
       <DependentUpon>frm_Lot_Total_Information.vb</DependentUpon>
     </Compile>
@@ -421,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lot Status Information\frm_Grid_String_Find.resx">
       <DependentUpon>frm_Grid_String_Find.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lot Status Information\frm_Lot_Residence_Time.resx">
+      <DependentUpon>frm_Lot_Residence_Time.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Lot Status Information\frm_Lot_Total_Information.resx">
       <DependentUpon>frm_Lot_Total_Information.vb</DependentUpon>

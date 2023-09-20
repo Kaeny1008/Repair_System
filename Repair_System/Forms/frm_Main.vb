@@ -306,4 +306,12 @@ Public Class frm_Main
         frm_Monthly_Production_Report.Focus()
 
     End Sub
+
+    Private Sub btn_Lot_Residence_Time_Click(sender As Object, e As EventArgs) Handles btn_Lot_Residence_Time.Click
+
+        frm_Lot_Residence_Time.MdiParent = Me
+        If Not frm_Lot_Residence_Time.Visible Then frm_Lot_Residence_Time.Show()
+        frm_Lot_Residence_Time.Focus()
+
+    End Sub
 End Class
