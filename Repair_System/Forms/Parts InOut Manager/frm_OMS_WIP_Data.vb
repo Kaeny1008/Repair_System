@@ -357,6 +357,8 @@ Public Class frm_OMS_WIP_DATA
         th_LoadingWindow.Abort()
         Thread.Sleep(100)
         MsgBox("재공 데이터 생성완료.", MsgBoxStyle.Information, form_Msgbox_String)
+        Label22.Text = "총 모듈 수량 : "
+        Label25.Text = "총 Lot 수량 : "
         GRID_Lot_List.Rows.Count = 1
 
     End Sub

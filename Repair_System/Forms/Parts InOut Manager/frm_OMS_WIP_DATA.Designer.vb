@@ -34,9 +34,8 @@ Partial Class frm_OMS_WIP_DATA
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.GRID_Data_List = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TB_C_Area_ID = New System.Windows.Forms.TextBox()
         Me.TB_M_Area_ID = New System.Windows.Forms.TextBox()
         Me.TB_C_Area_Flag = New System.Windows.Forms.TextBox()
@@ -88,6 +87,7 @@ Partial Class frm_OMS_WIP_DATA
         Me.TB_Company_Code = New System.Windows.Forms.TextBox()
         Me.TB_Item_Flag = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
         Me.GRID_Lot_List = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cms_Menu = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -222,6 +222,17 @@ Partial Class frm_OMS_WIP_DATA
         Me.SplitContainer2.SplitterDistance = 127
         Me.SplitContainer2.TabIndex = 0
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.ForeColor = System.Drawing.Color.Black
+        Me.Label22.Location = New System.Drawing.Point(3, 111)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(111, 12)
+        Me.Label22.TabIndex = 34
+        Me.Label22.Text = "총 모듈 수량 : 0 EA"
+        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -249,28 +260,6 @@ Partial Class frm_OMS_WIP_DATA
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(618, 120)
         Me.Panel2.TabIndex = 18
-        '
-        'Label25
-        '
-        Me.Label25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label25.ForeColor = System.Drawing.Color.Blue
-        Me.Label25.Location = New System.Drawing.Point(11, 66)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(160, 25)
-        Me.Label25.TabIndex = 35
-        Me.Label25.Text = "총 Lot 수량 : 0 Lot"
-        Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label22
-        '
-        Me.Label22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label22.ForeColor = System.Drawing.Color.Blue
-        Me.Label22.Location = New System.Drawing.Point(11, 91)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(160, 25)
-        Me.Label22.TabIndex = 34
-        Me.Label22.Text = "총 모듈 수량 : 0 EA"
-        Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TB_C_Area_ID
         '
@@ -910,6 +899,17 @@ Partial Class frm_OMS_WIP_DATA
         Me.Label3.Text = "Wafer Chip Flag"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.ForeColor = System.Drawing.Color.Black
+        Me.Label25.Location = New System.Drawing.Point(3, 94)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(105, 12)
+        Me.Label25.TabIndex = 35
+        Me.Label25.Text = "총 Lot 수량 : 0 Lot"
+        Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'GRID_Lot_List
         '
         Me.GRID_Lot_List.ColumnInfo = "2,1,0,0,0,100,Columns:"
@@ -964,6 +964,7 @@ Partial Class frm_OMS_WIP_DATA
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.GRID_Data_List, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel1.PerformLayout()
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
