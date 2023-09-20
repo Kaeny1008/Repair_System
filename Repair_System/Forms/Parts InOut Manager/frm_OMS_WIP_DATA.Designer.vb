@@ -228,9 +228,9 @@ Partial Class frm_OMS_WIP_DATA
         Me.Label22.ForeColor = System.Drawing.Color.Black
         Me.Label22.Location = New System.Drawing.Point(3, 111)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(111, 12)
+        Me.Label22.Size = New System.Drawing.Size(81, 12)
         Me.Label22.TabIndex = 34
-        Me.Label22.Text = "총 모듈 수량 : 0 EA"
+        Me.Label22.Text = "총 모듈 수량 :"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel2
@@ -905,9 +905,9 @@ Partial Class frm_OMS_WIP_DATA
         Me.Label25.ForeColor = System.Drawing.Color.Black
         Me.Label25.Location = New System.Drawing.Point(3, 94)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(105, 12)
+        Me.Label25.Size = New System.Drawing.Size(74, 12)
         Me.Label25.TabIndex = 35
-        Me.Label25.Text = "총 Lot 수량 : 0 Lot"
+        Me.Label25.Text = "총 Lot 수량 :"
         Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GRID_Lot_List

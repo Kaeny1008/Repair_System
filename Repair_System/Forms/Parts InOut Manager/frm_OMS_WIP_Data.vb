@@ -120,6 +120,8 @@ Public Class frm_OMS_WIP_DATA
 
     Private Sub Table_DT_Load()
 
+        thread_LoadingFormStart()
+
         GRID_Data_List.Redraw = False
         GRID_Data_List.Rows.Count = 1
 
@@ -152,11 +154,11 @@ Public Class frm_OMS_WIP_DATA
         GRID_Data_List.AutoSizeCols()
         GRID_Data_List.Redraw = True
 
+        th_LoadingWindow.Abort()
+
     End Sub
 
     Private Sub BTN_Search_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTN_Search.Click
-
-        thread_LoadingFormStart()
 
         Table_DT_Load()
 
@@ -164,11 +166,11 @@ Public Class frm_OMS_WIP_DATA
 
         GRID_Lot_List.TopRow = 0
 
-        th_LoadingWindow.Abort()
-
     End Sub
 
     Private Sub Lot_List_Load()
+
+        thread_LoadingFormStart()
 
         GRID_Lot_List.Redraw = False
         GRID_Lot_List.Rows.Count = 1
@@ -185,7 +187,14 @@ Public Class frm_OMS_WIP_DATA
 
         Do While sqlDR.Read
             If IsDBNull(sqlDR("CONFIRM_DATE")) Then
-                MsgBox("입고 확정되지 않은 Lot이 존재합니다.", MsgBoxStyle.Information, form_Msgbox_String)
+                th_LoadingWindow.Abort()
+                Thread.Sleep(100)
+                'MsgBox("입고 확정되지 않은 Lot이 존재합니다.", MsgBoxStyle.Information, form_Msgbox_String)
+                MessageBox.Show(Me,
+                                "입고 확정되지 않은 Lot이 존재합니다.",
+                                form_Msgbox_String,
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information)
                 GRID_Lot_List.Rows.Count = 1
                 GRID_Lot_List.Redraw = True
                 Exit Sub
@@ -259,6 +268,8 @@ Public Class frm_OMS_WIP_DATA
 
         Label22.Text = "총 모듈 수량 : " & Format(total_Module, "#,##0") & " EA"
         Label25.Text = "총 Lot 수량 : " & Format(total_Lot, "#,##0") & " Lot"
+
+        th_LoadingWindow.Abort()
 
     End Sub
 
