@@ -3,6 +3,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class frm_SMT_Working_History
 
+    Dim form_Msgbox_String As String = "SMT 생산현황"
+
     Private Sub frm_SMT_Working_History_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         NumericUpDown1.Value = 10
@@ -119,7 +121,7 @@ Public Class frm_SMT_Working_History
 
         s = C1FlexGrid1.Styles(CellStyleEnum.Subtotal1)
         s.BackColor = Color.LightBlue
-        s.ForeColor = Color.black
+        s.ForeColor = Color.Black
         s = C1FlexGrid1.Styles(CellStyleEnum.Subtotal2)
         s.BackColor = Color.DarkRed
         s.ForeColor = Color.White
@@ -129,7 +131,7 @@ Public Class frm_SMT_Working_History
         C1FlexGrid1.AllowEditing = False
         'C1FlexGrid1.Cols(0).WidthDisplay \= 3
         C1FlexGrid1.Tree.Column = 1
-        C1FlexGrid1.SubtotalPosition = SubtotalPositionEnum.AboveData 
+        C1FlexGrid1.SubtotalPosition = SubtotalPositionEnum.AboveData
 
     End Sub
 
@@ -222,10 +224,23 @@ Public Class frm_SMT_Working_History
 
     Private Sub btn_TimerReset_Click(sender As Object, e As EventArgs) Handles btn_TimerReset.Click
 
-        timer_SMT_Working.Interval = NumericUpDown1.Value * 1000
-        timer_SMT_Working.Enabled = False
-        timer_SMT_Working.Enabled = True
-        load_SMT_Working()
+        If NumericUpDown1.Value = 0 Then
+            timer_SMT_Working.Enabled = False
+            tb_Slip_No.Text = String.Empty
+            TextBox1.Text = String.Empty
+            TextBox2.Text = String.Empty
+            TextBox3.Text = String.Empty
+            grid_SMT_Working_Data.Rows.Count = 1
+            Label4.Visible = False
+            Timer1.Enabled = False
+            Timer2.Enabled = False
+            Label9.Visible = False
+        Else
+            timer_SMT_Working.Interval = NumericUpDown1.Value * 1000
+            timer_SMT_Working.Enabled = False
+            timer_SMT_Working.Enabled = True
+            load_SMT_Working()
+        End If
 
     End Sub
 
@@ -418,6 +433,17 @@ Public Class frm_SMT_Working_History
     Private Sub grid_LotList_LostFocus(sender As Object, e As EventArgs) Handles C1FlexGrid1.LostFocus
 
         frm_Main.lb_Status.Text = String.Empty
+
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
+
+        If NumericUpDown1.Value < 5 And Not NumericUpDown1.Value = 0 Then
+            MsgBox("새로고침 시간은 5초이하로 설정 할 수 없습니다.",
+                   MsgBoxStyle.Information,
+                   form_Msgbox_String)
+            NumericUpDown1.Value = 5
+        End If
 
     End Sub
 End Class
