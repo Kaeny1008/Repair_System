@@ -95,4 +95,10 @@ Public Class frm_Lot_Residence_Time
         th_LoadingWindow.Abort()
 
     End Sub
+
+    Private Sub Form_CLose_Click(sender As Object, e As EventArgs) Handles Form_CLose.Click
+
+        Me.Dispose()
+
+    End Sub
 End Class
