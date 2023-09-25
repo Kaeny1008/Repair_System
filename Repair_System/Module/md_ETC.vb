@@ -30,7 +30,7 @@ Module md_ETC
                     total_NumericCell += 1
                 End If
                 If Not Trim(sender(i, j)) = String.Empty Then
-                    total_Cell += 1
+                    If IsNumeric(sender(i, j)) Then total_Cell += 1
                 End If
             Next
         Next
@@ -49,7 +49,7 @@ Module md_ETC
     End Sub
 
     Public th_LoadingWindow As Thread
-    Dim thread_SleepTime As Integer = 400
+    Dim thread_SleepTime As Integer = 500
 
     Public Sub thread_LoadingFormStart()
 
