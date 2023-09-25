@@ -21,7 +21,8 @@ Module md_ETC
 
         Dim tip As String = String.Empty
         Dim total_Qty As Double = 0
-        Dim total_Cell As Integer = 0
+        Dim total_Number_Cell As Integer = 0
+        Dim total_Char_Cell As Integer = 0
         Dim total_NumericCell As Integer = 0
         For i = sender.Selection.TopRow To sender.Selection.BottomRow
             For j = sender.Selection.LeftCol To sender.Selection.RightCol
@@ -30,13 +31,21 @@ Module md_ETC
                     total_NumericCell += 1
                 End If
                 If Not Trim(sender(i, j)) = String.Empty Then
-                    If IsNumeric(sender(i, j)) Then total_Cell += 1
+                    If IsNumeric(sender(i, j)) Then
+                        total_Number_Cell += 1
+                    Else
+                        total_Char_Cell += 1
+                    End If
                 End If
             Next
         Next
 
-        If Not total_Cell = 0 Then
-            tip = "개수 : " & Format(total_Cell, "#,##0.########")
+        If Not total_Char_Cell = 0 Then
+            tip = "개수(문자) : " & Format(total_Char_Cell, "#,##0.########")
+        End If
+
+        If Not total_Number_Cell = 0 Then
+            tip += "    개수(숫자) : " & Format(total_Number_Cell, "#,##0.########")
         End If
 
         If Not total_Qty = 0 Then
