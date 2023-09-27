@@ -104,6 +104,12 @@ Public Class frm_Material_Total_Information
             frm_Grid_String_Find.Focus()
         End If
 
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
     End Sub
 
     Private Sub grid_Lot_List_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles grid_Lot_List.MouseDoubleClick

@@ -183,4 +183,12 @@ Public Class frm_Monthly_Production_Report
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub grid_SlipNoDetail_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_SlipNoDetail.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        End If
+
+    End Sub
 End Class

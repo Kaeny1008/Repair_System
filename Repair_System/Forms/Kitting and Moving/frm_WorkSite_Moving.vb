@@ -595,4 +595,16 @@ Public Class frm_WorkSite_Moving
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub grid_SelectList_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_SelectList.KeyDown,
+                                                                                     grid_KittingList.KeyDown,
+                                                                                     grid_OutList.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

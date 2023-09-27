@@ -153,6 +153,12 @@ Public Class frm_Module_Out_Add
 
         End Select
 
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
     End Sub
 
     Private Sub grid_ShipList_AfterEdit(sender As Object, e As RowColEventArgs) Handles grid_ShipList.AfterEdit
@@ -951,6 +957,16 @@ Public Class frm_Module_Out_Add
         Label3.Text = "총 출고 Module : " & Format(total_Module, "#,##0 EA")
 
         th_LoadingWindow.Abort()
+
+    End Sub
+
+    Private Sub grid_OutList_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_OutList.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
 
     End Sub
 End Class

@@ -157,6 +157,12 @@ Public Class frm_Lot_Total_Information
             frm_Grid_String_Find.Focus()
         End If
 
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
     End Sub
 
     Private Sub Form_CLose_Click(sender As Object, e As EventArgs) Handles Form_CLose.Click

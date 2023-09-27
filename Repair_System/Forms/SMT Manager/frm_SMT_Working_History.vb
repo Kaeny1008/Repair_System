@@ -446,4 +446,14 @@ Public Class frm_SMT_Working_History
         End If
 
     End Sub
+
+    Private Sub C1FlexGrid1_KeyDown(sender As Object, e As KeyEventArgs) Handles C1FlexGrid1.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

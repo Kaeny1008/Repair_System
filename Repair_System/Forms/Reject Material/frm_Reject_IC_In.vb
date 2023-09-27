@@ -585,4 +585,15 @@ Public Class frm_Reject_IC_In
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub grid_RejectList_Detail_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_RejectList_Detail.KeyDown,
+                                                                                            grid_RejectList.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

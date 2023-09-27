@@ -344,4 +344,24 @@ Public Class frm_MisCheck_Result
     Private Sub ToolStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles ToolStrip1.ItemClicked
 
     End Sub
+
+    Private Sub grid_PartHistory_MouseMove(sender As Object, e As MouseEventArgs) Handles grid_PartHistory.MouseMove
+
+        If sender.MouseRow > 0 And
+            e.Button = MouseButtons.Left Then
+
+            md_ETC.cellCal(sender, Nothing)
+        End If
+
+    End Sub
+
+    Private Sub grid_PartHistory_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_PartHistory.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

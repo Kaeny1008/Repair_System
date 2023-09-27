@@ -120,6 +120,12 @@ Public Class frm_Material_LotNo_Information
             frm_Grid_String_Find.Focus()
         End If
 
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
     End Sub
 
     Private Sub grid_Lot_List_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles grid_Lot_List.MouseDoubleClick
@@ -152,6 +158,10 @@ Public Class frm_Material_LotNo_Information
     Private Sub grid_LotList_LostFocus(sender As Object, e As EventArgs) Handles grid_Lot_List.LostFocus
 
         frm_Main.lb_Status.Text = String.Empty
+
+    End Sub
+
+    Private Sub grid_Lot_List_KeyDownEdit(sender As Object, e As KeyEditEventArgs) Handles grid_Lot_List.KeyDownEdit
 
     End Sub
 End Class

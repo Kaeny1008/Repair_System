@@ -1488,4 +1488,14 @@ Public Class frm_IQC_Print
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub grid_Inspect_List_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_Inspect_List.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

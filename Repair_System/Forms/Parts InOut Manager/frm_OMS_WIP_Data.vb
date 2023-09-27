@@ -382,21 +382,9 @@ Public Class frm_OMS_WIP_DATA
 
     Private Sub GRID_Lot_List_MouseMove(sender As Object, e As MouseEventArgs) Handles GRID_Lot_List.MouseMove
 
-        Dim tip As String = String.Empty
         If sender.MouseRow > 0 And
             e.Button = MouseButtons.Left Then
-
-            Dim total_Qty As Double = 0
-            For i = sender.Selection.TopRow To sender.Selection.BottomRow
-                For j = sender.Selection.LeftCol To sender.Selection.RightCol
-                    If IsNumeric(sender(i, j)) Then
-                        total_Qty += sender(i, j)
-                    End If
-                Next
-            Next
-
-            If Not total_Qty = 0 Then _
-                ToolTip1.SetToolTip(sender, "합계 : " & Format(total_Qty, "#,##0"))
+            md_ETC.cellCal(sender, Nothing)
         End If
 
     End Sub
@@ -445,6 +433,16 @@ Public Class frm_OMS_WIP_DATA
     End Sub
 
     Private Sub Label25_Click(sender As Object, e As EventArgs) Handles Label25.Click
+
+    End Sub
+
+    Private Sub GRID_Lot_List_KeyDown(sender As Object, e As KeyEventArgs) Handles GRID_Lot_List.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
 
     End Sub
 End Class

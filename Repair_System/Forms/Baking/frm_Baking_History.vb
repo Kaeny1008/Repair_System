@@ -205,4 +205,14 @@ Public Class frm_Baking_History
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub grid_LotList_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_LotList.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

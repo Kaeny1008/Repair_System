@@ -58,7 +58,7 @@ Module md_ETC
     End Sub
 
     Public th_LoadingWindow As Thread
-    Dim thread_SleepTime As Integer = 500
+    Dim thread_SleepTime As Integer = 300
 
     Public Sub thread_LoadingFormStart()
 

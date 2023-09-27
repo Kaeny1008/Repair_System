@@ -149,4 +149,14 @@ Public Class frm_IQC_Standby_List
         frm_Main.lb_Status.Text = String.Empty
 
     End Sub
+
+    Private Sub GRID_Lot_List_KeyDown(sender As Object, e As KeyEventArgs) Handles GRID_Lot_List.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
+    End Sub
 End Class

@@ -918,6 +918,12 @@ Public Class frm_Module_In_Add
             e.SuppressKeyPress = True
         End If
 
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
+
     End Sub
 
     Private Sub GRID_Parts_List_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles grid_SlipNoDetail.MouseClick
@@ -1059,6 +1065,16 @@ Public Class frm_Module_In_Add
                                                                                       grid_SlipNo.LostFocus
 
         frm_Main.lb_Status.Text = String.Empty
+
+    End Sub
+
+    Private Sub grid_SlipNo_KeyDown(sender As Object, e As KeyEventArgs) Handles grid_SlipNo.KeyDown
+
+        If e.Shift Then
+            md_ETC.cellCal(sender, Nothing)
+        Else
+            frm_Main.lb_Status.Text = String.Empty
+        End If
 
     End Sub
 End Class
