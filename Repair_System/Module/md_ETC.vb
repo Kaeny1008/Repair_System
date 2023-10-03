@@ -64,7 +64,7 @@ Module md_ETC
 
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow)
         th_LoadingWindow.IsBackground = True
-        th_LoadingWindow.SetApartmentState(ApartmentState.STA)
+        th_LoadingWindow.SetApartmentState(ApartmentState.MTA)
         th_LoadingWindow.Start()
         Thread.Sleep(thread_SleepTime)
 
@@ -74,7 +74,7 @@ Module md_ETC
 
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow2)
         th_LoadingWindow.IsBackground = True
-        th_LoadingWindow.SetApartmentState(ApartmentState.STA)
+        th_LoadingWindow.SetApartmentState(ApartmentState.MTA)
         th_LoadingWindow.Start(showText)
         Thread.Sleep(thread_SleepTime)
 
