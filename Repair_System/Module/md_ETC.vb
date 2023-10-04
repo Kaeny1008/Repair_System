@@ -57,16 +57,15 @@ Module md_ETC
 
     End Sub
 
-    Public th_LoadingWindow As Thread
-    Dim thread_SleepTime As Integer = 300
+    Dim th_LoadingWindow As Thread
+    Dim thread_SleepTime As Integer = 500
 
     Public Sub thread_LoadingFormStart()
 
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow)
         th_LoadingWindow.IsBackground = True
-        th_LoadingWindow.SetApartmentState(ApartmentState.MTA)
+        th_LoadingWindow.SetApartmentState(ApartmentState.STA)
         th_LoadingWindow.Start()
-        Thread.Sleep(thread_SleepTime)
 
     End Sub
 
@@ -74,15 +73,18 @@ Module md_ETC
 
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow2)
         th_LoadingWindow.IsBackground = True
-        th_LoadingWindow.SetApartmentState(ApartmentState.MTA)
+        th_LoadingWindow.SetApartmentState(ApartmentState.STA)
         th_LoadingWindow.Start(showText)
-        Thread.Sleep(thread_SleepTime)
 
     End Sub
 
     Private Sub load_LoadWindow()
 
-        frm_LoadingImage.ShowDialog()
+        Try
+            frm_LoadingImage.ShowDialog()
+        Catch ex As ThreadAbortException
+            Console.WriteLine("ThreadAbortException Message : " & ex.Message)
+        End Try
 
     End Sub
 
@@ -90,6 +92,14 @@ Module md_ETC
 
         frm_LoadingImage.Label1.Text = showText
         frm_LoadingImage.ShowDialog()
+
+    End Sub
+
+    Public Sub thread_LoadingFormEnd()
+
+        If frm_LoadingImage.Visible Then frm_LoadingImage.Dispose()
+        Thread.Sleep(thread_SleepTime)
+        th_LoadingWindow.Abort()
 
     End Sub
 End Module

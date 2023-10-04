@@ -241,7 +241,7 @@ Public Class frm_OMS_Ship_Data
         Label9.Text = "총 출고 Lot : " & Format(total_Lot, "#,##0") & " EA"
         Label10.Text = "총 출고 Module : " & Format(total_Module, "#,##0") & " EA"
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -322,7 +322,7 @@ Public Class frm_OMS_Ship_Data
 
         cttm = String.Empty
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("반제품 출고 데이터 생성완료.", MsgBoxStyle.Information, form_Msgbox_String)
         Label9.Text = "총 출고 Lot : "

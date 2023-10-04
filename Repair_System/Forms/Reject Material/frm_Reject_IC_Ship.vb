@@ -245,7 +245,7 @@ Public Class frm_Reject_IC_Ship
             load_Date()
         End If
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -640,7 +640,7 @@ Public Class frm_Reject_IC_Ship
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("폐기자재 반납 내용을 저장 하였습니다.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -819,7 +819,7 @@ Public Class frm_Reject_IC_Ship
         grid_RejectList.AutoSizeCols()
         grid_RejectList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -897,7 +897,7 @@ Public Class frm_Reject_IC_Ship
 
             btn_PMIC_Print.Enabled = True
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub

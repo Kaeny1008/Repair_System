@@ -154,7 +154,7 @@ Public Class frm_OMS_WIP_DATA
         GRID_Data_List.AutoSizeCols()
         GRID_Data_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -187,7 +187,7 @@ Public Class frm_OMS_WIP_DATA
 
         Do While sqlDR.Read
             If IsDBNull(sqlDR("CONFIRM_DATE")) Then
-                th_LoadingWindow.Abort()
+                thread_LoadingFormEnd
                 Thread.Sleep(100)
                 'MsgBox("입고 확정되지 않은 Lot이 존재합니다.", MsgBoxStyle.Information, form_Msgbox_String)
                 MessageBox.Show(Me,
@@ -269,7 +269,7 @@ Public Class frm_OMS_WIP_DATA
         Label22.Text = "총 모듈 수량 : " & Format(total_Module, "#,##0") & " EA"
         Label25.Text = "총 Lot 수량 : " & Format(total_Lot, "#,##0") & " Lot"
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -365,7 +365,7 @@ Public Class frm_OMS_WIP_DATA
 
         cttm = String.Empty
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("재공 데이터 생성완료.", MsgBoxStyle.Information, form_Msgbox_String)
         Label22.Text = "총 모듈 수량 : "

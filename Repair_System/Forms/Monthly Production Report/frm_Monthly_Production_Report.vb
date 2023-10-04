@@ -128,7 +128,7 @@ Public Class frm_Monthly_Production_Report
         Label1.Text = Format(Now, "yyyy-MM-dd HH:mm:ss") & " 조회된 내용입니다."
         Label1.Visible = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

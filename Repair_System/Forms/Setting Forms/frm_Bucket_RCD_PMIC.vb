@@ -215,7 +215,7 @@ Public Class frm_Bucket_RCD_PMIC
 
         'MsgBox("저장완료.", MsgBoxStyle.Information, form_msgbox_string)
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
         btn_Search_Click(Nothing, Nothing)
 
@@ -279,7 +279,7 @@ Public Class frm_Bucket_RCD_PMIC
         GRID_Data_List.AutoSizeCols()
         GRID_Data_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

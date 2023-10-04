@@ -401,7 +401,7 @@ Public Class frm_Module_Out_Add
         grid_OutList.AutoSizeCols()
         grid_OutList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -461,7 +461,7 @@ Public Class frm_Module_Out_Add
             sqlTran.Commit()
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_msgbox_string)
             Exit Sub
@@ -469,7 +469,7 @@ Public Class frm_Module_Out_Add
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
 
         Load_ShipInfo(tb_SlipNo.Text)
@@ -699,7 +699,7 @@ Public Class frm_Module_Out_Add
             Label10.Text = "총 출고 Lot수 : " & Format(grid_ShipList.Rows.Count - 2, "#,##0") & " Lot"
             Label3.Text = "총 출고 Module : " & Format(total_Module, "#,##0 EA")
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub
@@ -956,7 +956,7 @@ Public Class frm_Module_Out_Add
         Label10.Text = "총 출고 Lot수 : " & Format(grid_ShipList.Rows.Count - 2, "#,##0") & " Lot"
         Label3.Text = "총 출고 Module : " & Format(total_Module, "#,##0 EA")
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

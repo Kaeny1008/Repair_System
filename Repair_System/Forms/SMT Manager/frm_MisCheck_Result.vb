@@ -180,7 +180,7 @@ Public Class frm_MisCheck_Result
         grid_LotList.AutoSizeCols()
         grid_LotList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -192,7 +192,7 @@ Public Class frm_MisCheck_Result
             load_Material_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
             load_PGM_Check_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
             load_Dipping_Feeder_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub

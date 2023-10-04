@@ -436,7 +436,7 @@ Public Class frm_Material_In_Add
             End If
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -444,7 +444,7 @@ Public Class frm_Material_In_Add
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("저장완료.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -491,7 +491,7 @@ Public Class frm_Material_In_Add
         BTN_Save.Enabled = False
         BTN_Save2.Enabled = False
 
-        runProcess.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

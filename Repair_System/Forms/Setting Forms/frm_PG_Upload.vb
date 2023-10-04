@@ -243,7 +243,7 @@ Public Class frm_PG_Upload
         '최신 버전체크 파일을 다운로드 및 그리드에 표시
         load_FileList()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -328,7 +328,7 @@ Public Class frm_PG_Upload
 
             If strSql = String.Empty Then
                 'MsgBox("변경 사항이 없습니다.", MsgBoxStyle.Information, "Repair System - 프로그램 파일 Upload")
-                th_LoadingWindow.Abort()
+                thread_LoadingFormEnd
                 Thread.Sleep(100)
                 MessageBox.Show(Me, "변경 사항이 없습니다.", "Repair System - 프로그램 파일 Upload", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 DBClose()
@@ -367,7 +367,7 @@ Public Class frm_PG_Upload
 
         load_FileList()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MessageBox.Show(Me, "저장완료.", "Repair System - 프로그램 파일 Upload", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -390,7 +390,7 @@ Public Class frm_PG_Upload
         '최신 버전체크 파일을 다운로드 및 그리드에 표시
         load_FileList()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 End Class

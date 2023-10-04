@@ -145,7 +145,7 @@ Public Class frm_WorkSite_Moving
 
         btn_Save.Enabled = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -261,7 +261,7 @@ Public Class frm_WorkSite_Moving
             End If
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -279,7 +279,7 @@ Public Class frm_WorkSite_Moving
         grid_KittingList.Rows.Count = 1
         grid_SelectList.Rows.Count = 1
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
 
         MsgBox("현장 출고 등록을 완료 하였습니다.",
@@ -483,7 +483,7 @@ Public Class frm_WorkSite_Moving
         grid_OutList.AutoSizeCols()
         grid_OutList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -501,7 +501,7 @@ Public Class frm_WorkSite_Moving
             Ship_Info_Load(grid_OutList(selrow, 1))
             Ship_Info_Detail_Load(grid_OutList(selrow, 1))
             grid_KittingList.Rows.Count = 1
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub

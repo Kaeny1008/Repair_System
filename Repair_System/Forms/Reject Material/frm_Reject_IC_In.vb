@@ -197,7 +197,7 @@ Public Class frm_Reject_IC_In
                 End If
             Next
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
 
             Dim status_check As String = lot_Information_Load(use_lot_no)
             If status_check = String.Empty Then 'Lot 정보를 불러온다.
@@ -332,7 +332,7 @@ Public Class frm_Reject_IC_In
         now_Total_Lot = 0
         now_Total_Module = 0
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -426,7 +426,7 @@ Public Class frm_Reject_IC_In
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("폐기자재 회수 내용을 저장 하였습니다.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -504,7 +504,7 @@ Public Class frm_Reject_IC_In
             grid_RejectList_Detail.AutoSizeCols()
             grid_RejectList_Detail.Redraw = True
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub

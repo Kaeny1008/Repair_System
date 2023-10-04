@@ -124,7 +124,7 @@ Public Class frm_IQC_Standby_List
         GRID_Lot_List.AutoSizeCols()
         GRID_Lot_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

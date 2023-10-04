@@ -285,7 +285,7 @@ Public Class frm_oms_file_data
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("저장완료.", MsgBoxStyle.Information, form_msgbox_string)
 
@@ -342,7 +342,7 @@ Public Class frm_oms_file_data
         grid_Data_List.AutoSizeCols()
         grid_Data_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

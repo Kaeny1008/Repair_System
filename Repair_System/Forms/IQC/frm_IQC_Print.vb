@@ -139,7 +139,7 @@ Public Class frm_IQC_Print
             Dim print_check As Boolean = Label_Print_Run(CB_Parts_Section.Text)
 
             If print_check = False Then
-                th_LoadingWindow.Abort()
+                thread_LoadingFormEnd
                 Thread.Sleep(100)
                 MsgBox("라벨 발행 실패", MsgBoxStyle.Critical, form_Msgbox_String)
                 Exit Sub
@@ -163,7 +163,7 @@ Public Class frm_IQC_Print
         TB_Insp_Memo.Text = String.Empty
         tb_Before_Product.Text = String.Empty
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("저장완료.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -232,7 +232,7 @@ Public Class frm_IQC_Print
             Dim print_check As Boolean = Label_Print_Run(CB_Parts_Section.Text)
 
             If print_check = False Then
-                th_LoadingWindow.Abort()
+                thread_LoadingFormEnd
                 Thread.Sleep(100)
                 MsgBox("라벨 발행 실패", MsgBoxStyle.Critical, form_Msgbox_String)
                 Exit Sub
@@ -256,7 +256,7 @@ Public Class frm_IQC_Print
         TB_Insp_Memo.Text = String.Empty
         tb_Before_Product.Text = String.Empty
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("저장 완료.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -731,7 +731,7 @@ Public Class frm_IQC_Print
         grid_Inspect_List.AutoSizeCols()
         grid_Inspect_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

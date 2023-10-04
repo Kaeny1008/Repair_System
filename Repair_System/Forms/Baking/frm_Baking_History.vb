@@ -128,7 +128,7 @@ Public Class frm_Baking_History
         grid_DailyList.AutoSizeCols()
         grid_DailyList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -184,7 +184,7 @@ Public Class frm_Baking_History
         grid_LotList.AutoSizeCols()
         grid_LotList.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

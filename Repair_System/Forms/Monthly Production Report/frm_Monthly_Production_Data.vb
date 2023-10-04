@@ -325,7 +325,7 @@ Public Class frm_Monthly_Production_Data
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
 
         MsgBox("저장완료.", MsgBoxStyle.Information, form_Msgbox_String)
@@ -370,7 +370,7 @@ Public Class frm_Monthly_Production_Data
         grid_SlipNoDetail.AutoSizeCols()
         grid_SlipNoDetail.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

@@ -116,7 +116,7 @@ Public Class frm_IQC_RePrint
         grid_History.AutoSizeCols()
         grid_History.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -385,7 +385,7 @@ Public Class frm_IQC_RePrint
         ElseIf tb_Lot_Option.Text Like "*Q" Then
 
         Else
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox("수리 정보가 확실하지 않은 Option 입니다. 확인하여 주십시오.", MsgBoxStyle.Information, form_Msgbox_String)
             Exit Sub
@@ -469,7 +469,7 @@ Public Class frm_IQC_RePrint
             File.Delete(Application.StartupPath & "\print.txt")
         Catch ex As Exception
             File.Delete(Application.StartupPath & "\print.txt")
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox("라벨 발행 실패." & vbCrLf & ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -509,7 +509,7 @@ Public Class frm_IQC_RePrint
             End If
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -517,7 +517,7 @@ Public Class frm_IQC_RePrint
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("라벨 발행 완료.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -731,7 +731,7 @@ Public Class frm_IQC_RePrint
             File.Delete(Application.StartupPath & "\print.txt")
         Catch ex As Exception
             File.Delete(Application.StartupPath & "\print.txt")
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox("라벨 발행 실패." & vbCrLf & ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -771,7 +771,7 @@ Public Class frm_IQC_RePrint
             End If
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -779,7 +779,7 @@ Public Class frm_IQC_RePrint
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
         Thread.Sleep(100)
         MsgBox("라벨 발행 완료.", MsgBoxStyle.Information, form_Msgbox_String)
 

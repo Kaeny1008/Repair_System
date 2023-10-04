@@ -674,7 +674,7 @@ Public Class frm_Module_In_Add
             End If
         Catch ex As MySqlException
             sqlTran.Rollback()
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd()
             Thread.Sleep(100)
             MsgBox(ex.Message, MsgBoxStyle.Critical, form_Msgbox_String)
             Exit Sub
@@ -682,7 +682,7 @@ Public Class frm_Module_In_Add
 
         DBClose()
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd()
         Thread.Sleep(100)
         MsgBox("저장완료.", MsgBoxStyle.Information, form_Msgbox_String)
 
@@ -737,7 +737,7 @@ Public Class frm_Module_In_Add
         btn_Save.Enabled = False
         btn_Save2.Enabled = False
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd()
 
     End Sub
 
@@ -822,7 +822,7 @@ Public Class frm_Module_In_Add
             btn_Save.Enabled = True
             btn_Save2.Enabled = True
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd()
         End If
 
     End Sub
@@ -1075,6 +1075,10 @@ Public Class frm_Module_In_Add
         Else
             frm_Main.lb_Status.Text = String.Empty
         End If
+
+    End Sub
+
+    Private Sub grid_SlipNo_AfterResizeColumn(sender As Object, e As RowColEventArgs) Handles grid_SlipNo.AfterResizeColumn
 
     End Sub
 End Class

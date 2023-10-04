@@ -143,7 +143,7 @@ Public Class frm_Lot_Total_Information
         grid_Lot_List.AutoSizeCols()
         grid_Lot_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 

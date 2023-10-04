@@ -315,7 +315,7 @@ Public Class frm_SMT_Working_History
         grid_Daily_List.AutoSizeCols()
         grid_Daily_List.Redraw = True
 
-        th_LoadingWindow.Abort()
+        thread_LoadingFormEnd
 
     End Sub
 
@@ -370,7 +370,7 @@ Public Class frm_SMT_Working_History
             C1FlexGrid1.AutoSizeCols()
             C1FlexGrid1.Redraw = True
 
-            th_LoadingWindow.Abort()
+            thread_LoadingFormEnd
         End If
 
     End Sub
