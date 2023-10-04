@@ -58,13 +58,14 @@ Module md_ETC
     End Sub
 
     Dim th_LoadingWindow As Thread
-    Dim thread_SleepTime As Integer = 500
+    Dim thread_SleepTime As Integer = 100
 
     Public Sub thread_LoadingFormStart()
 
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow)
         th_LoadingWindow.IsBackground = True
         th_LoadingWindow.SetApartmentState(ApartmentState.STA)
+        Console.WriteLine("(Loading Form) Staring thread...")
         th_LoadingWindow.Start()
 
     End Sub
@@ -74,6 +75,7 @@ Module md_ETC
         th_LoadingWindow = New Thread(AddressOf load_LoadWindow2)
         th_LoadingWindow.IsBackground = True
         th_LoadingWindow.SetApartmentState(ApartmentState.STA)
+        Console.WriteLine("(Loading Form) Staring thread...")
         th_LoadingWindow.Start(showText)
 
     End Sub
@@ -83,7 +85,7 @@ Module md_ETC
         Try
             frm_LoadingImage.ShowDialog()
         Catch ex As ThreadAbortException
-            Console.WriteLine("ThreadAbortException Message : " & ex.Message)
+            Console.WriteLine("(Loading Form) ThreadAbortException : " & ex.Message)
         End Try
 
     End Sub
@@ -99,7 +101,11 @@ Module md_ETC
 
         If frm_LoadingImage.Visible Then frm_LoadingImage.Dispose()
         Thread.Sleep(thread_SleepTime)
+        Console.WriteLine("(Loading Form) Aborting thread...")
         th_LoadingWindow.Abort()
+        Console.WriteLine("(Loading Form) Waiting until thread stop...")
+        th_LoadingWindow.Join()
+        Console.WriteLine("(Loading Form) Finished...")
 
     End Sub
 End Module
