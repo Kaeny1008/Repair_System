@@ -168,7 +168,9 @@ Public Class frm_Reject_IC_In
     Private Sub tb_Barcode_KeyDown(sender As Object, e As KeyEventArgs) Handles tb_Barcode.KeyDown
 
         If e.KeyCode = 13 And Not Trim(tb_Barcode.Text) = String.Empty Then
+
             thread_LoadingFormStart()
+
             tb_Barcode.Text = tb_Barcode.Text.ToUpper
 
             If UBound(tb_Barcode.Text.Split("/")) < 2 And Not CheckBox1.Checked Then
