@@ -37,7 +37,7 @@ Public Class frm_Lot_Total_Information
             .AllowFreezing = AllowFreezingEnum.None
             .Rows(0).Height = 40
             .Rows.DefaultSize = 20
-            .Cols.Count = 17
+            .Cols.Count = 18
             .Cols.Fixed = 1
             .Rows.Count = 1
             .Rows.Fixed = 1
@@ -57,12 +57,14 @@ Public Class frm_Lot_Total_Information
             grid_Lot_List(0, 13) = "RCD 작업일자"
             grid_Lot_List(0, 14) = "출하 일자"
             grid_Lot_List(0, 15) = "폐기자재 회수여부"
-            grid_Lot_List(0, 16) = "비고"
+            grid_Lot_List(0, 16) = "PFQ, DOE 물량" & vbCrLf & "Or Dummy"
+            grid_Lot_List(0, 17) = "비고"
+            .Cols(16).DataType = GetType(Boolean)
             .AutoClipboard = True
             .Styles.Fixed.TextAlign = TextAlignEnum.CenterCenter
             .Styles.Normal.TextAlign = TextAlignEnum.CenterCenter
             .Cols(.Cols.Count - 1).StyleNew.TextAlign = TextAlignEnum.LeftCenter
-            .ExtendLastCol = False
+            .ExtendLastCol = True
             .AutoSizeCols()
             .ShowCursor = True
             .Tree.Style = TreeStyleFlags.Simple
@@ -110,31 +112,25 @@ Public Class frm_Lot_Total_Information
                                           sqlDR("rcd_end_date") & vbTab &
                                           sqlDR("ship_date") & vbTab &
                                           sqlDR("reject_material") & vbTab &
+                                          sqlDR("pfq_doe") & vbTab &
                                           sqlDR("note")
             lb_Total.Text = Format(CDbl(lb_Total.Text) + sqlDR("chip_qty"), "#,##0")
             Select Case sqlDR("lot_status")
-                Case "Confirm Ready"
-                    If CheckBox1.Checked Then grid_Lot_List.AddItem(insert_String)
                 Case "Ready"
-                    If CheckBox2.Checked Then grid_Lot_List.AddItem(insert_String)
                     lb_Inspect_Ready.Text = Format(CDbl(lb_Inspect_Ready.Text) + sqlDR("chip_qty"), "#,##0")
                 Case "Incoming Inspection Completed"
-                    If CheckBox3.Checked Then grid_Lot_List.AddItem(insert_String)
                     lb_Inspection_Completed.Text = Format(CDbl(lb_Inspection_Completed.Text) + sqlDR("chip_qty"), "#,##0")
                 Case "Baking End"
-                    If CheckBox4.Checked Then grid_Lot_List.AddItem(insert_String)
                     lb_Baking_Completed.Text = Format(CDbl(lb_Baking_Completed.Text) + sqlDR("chip_qty"), "#,##0")
                 Case "Moving to WorkSite"
-                    If CheckBox6.Checked Then grid_Lot_List.AddItem(insert_String)
                     lb_Moving_Completed.Text = Format(CDbl(lb_Moving_Completed.Text) + sqlDR("chip_qty"), "#,##0")
                 Case "Completed"
-                    If CheckBox7.Checked Then grid_Lot_List.AddItem(insert_String)
                     lb_Completed.Text = Format(CDbl(lb_Completed.Text) + sqlDR("chip_qty"), "#,##0")
-                Case Else
-                    grid_Lot_List.AddItem(insert_String)
             End Select
+
             Label2.Text = Format(CDbl(lb_Total.Text) - CDbl(lb_Completed.Text), "#,##0")
             Label8.Text = Format(CDbl(Label8.Text) + 1, "#,##0")
+            grid_Lot_List.AddItem(insert_String)
         Loop
         sqlDR.Close()
 
@@ -143,7 +139,9 @@ Public Class frm_Lot_Total_Information
         grid_Lot_List.AutoSizeCols()
         grid_Lot_List.Redraw = True
 
-        thread_LoadingFormEnd
+        GroupBox1.Enabled = True
+
+        thread_LoadingFormEnd()
 
     End Sub
 
@@ -192,9 +190,63 @@ Public Class frm_Lot_Total_Information
             CheckBox3.CheckedChanged,
             CheckBox4.CheckedChanged,
             CheckBox6.CheckedChanged,
-            CheckBox7.CheckedChanged
+            CheckBox7.CheckedChanged,
+            CheckBox5.CheckedChanged
 
-        If first_run = 1 Then BTN_Search_Click(Nothing, Nothing)
+        'If first_run = 1 Then BTN_Search_Click(Nothing, Nothing)
+
+        If first_run = 0 Then Exit Sub
+
+        grid_Lot_List.Redraw = False
+
+        For i = 1 To grid_Lot_List.Rows.Count - 1
+            Select Case grid_Lot_List(i, 7)
+                Case "Confirm Ready"
+                    If CheckBox1.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+                Case "Ready"
+                    If CheckBox2.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+                Case "Incoming Inspection Completed"
+                    If CheckBox3.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+                Case "Baking End"
+                    If CheckBox4.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+                Case "Moving to WorkSite"
+                    If CheckBox6.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+                Case "Completed"
+                    If CheckBox7.Checked Then
+                        grid_Lot_List.Rows(i).Visible = True
+                    Else
+                        grid_Lot_List.Rows(i).Visible = False
+                    End If
+            End Select
+
+            If CheckBox5.Checked = False Then
+                If grid_Lot_List.GetCellCheck(i, 16) = CheckEnum.Checked Then
+                    grid_Lot_List.Rows(i).Visible = False
+                End If
+            End If
+        Next
+
+        grid_Lot_List.Redraw = True
 
     End Sub
 

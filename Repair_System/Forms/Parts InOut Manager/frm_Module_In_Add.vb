@@ -622,7 +622,7 @@ Public Class frm_Module_In_Add
                     strSQL += ",'" & write_date & "'"
                     strSQL += ",'" & grid_SlipNoDetail(i, 18) & "'" '비고
                     strSQL += ",'" & write_date & "'"
-                    strSQL += ",'" & grid_SlipNoDetail(i, 17) & "'" '비고
+                    strSQL += ",'" & grid_SlipNoDetail(i, 17) & "'" 'pfq_doe
                     strSQL += ",'" & grid_SlipNoDetail(i, 19) & "');"
                 ElseIf grid_SlipNoDetail(i, 0).ToString = "M" Then
                     '현재행이 수정된 경우
