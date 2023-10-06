@@ -901,7 +901,7 @@ Public Class frm_Module_Out_Add
 
     Private Sub btn_PDA_Check_Click(sender As Object, e As EventArgs) Handles btn_PDA_Check.Click
 
-        If Not frm_Module_Out_PDA.Visible Then frm_Module_Out_PDA.ShowDialog()
+        If Not frm_Module_Out_PDA.Visible Then frm_Module_Out_PDA.Show()
         frm_Module_Out_PDA.Focus()
 
     End Sub

@@ -82,7 +82,8 @@ Public Class frm_Module_Out_PDA
         grid_OutList.AutoSizeCols()
         grid_OutList.Redraw = True
 
-        thread_LoadingFormEnd
+        thread_LoadingFormEnd()
+        Me.BringToFront()
 
     End Sub
 
