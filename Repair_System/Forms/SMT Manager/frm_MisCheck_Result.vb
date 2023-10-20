@@ -20,22 +20,24 @@ Public Class frm_MisCheck_Result
             .AllowFreezing = AllowFreezingEnum.None
             .Rows(0).Height = 40
             .Rows.DefaultSize = 20
-            .Cols.Count = 6
+            .Cols.Count = 7
             .Cols.Fixed = 1
             .Rows.Count = 1
             .Rows.Fixed = 1
             grid_LotList(0, 0) = "No"
-            grid_LotList(0, 1) = "Lot No."
-            grid_LotList(0, 2) = "Option"
-            grid_LotList(0, 3) = "YJ No."
-            grid_LotList(0, 4) = "작업구분"
-            grid_LotList(0, 5) = "작업일자"
+            grid_LotList(0, 1) = "Product"
+            grid_LotList(0, 2) = "Lot No."
+            grid_LotList(0, 3) = "Option"
+            grid_LotList(0, 4) = "YJ No."
+            grid_LotList(0, 5) = "작업구분"
+            grid_LotList(0, 6) = "작업일자"
             .AutoClipboard = True
             .Styles.Fixed.TextAlign = TextAlignEnum.CenterCenter
             .Styles.Normal.TextAlign = TextAlignEnum.CenterCenter
             '.Cols(.Cols.Count - 1).StyleNew.TextAlign = TextAlignEnum.LeftCenter
             .AutoSizeCols()
             .ShowCursor = True
+            .SelectionMode = SelectionModeEnum.ListBox
         End With
 
         With grid_PartHistory
@@ -166,6 +168,7 @@ Public Class frm_MisCheck_Result
 
         Do While sqlDR.Read
             Dim insertString As String = grid_LotList.Rows.Count & vbTab &
+                sqlDR("product") & vbTab &
                 sqlDR("lot_no") & vbTab &
                 sqlDR("lot_option") & vbTab &
                 sqlDR("yj_no") & vbTab &
@@ -189,10 +192,10 @@ Public Class frm_MisCheck_Result
         If e.Button = MouseButtons.Left And grid_LotList.MouseRow > 0 Then
             Dim selRow As Integer = grid_LotList.MouseRow
             thread_LoadingFormStart()
-            load_Material_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
-            load_PGM_Check_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
-            load_Dipping_Feeder_History(grid_LotList(selRow, 1), grid_LotList(selRow, 4))
-            thread_LoadingFormEnd
+            load_Material_History(grid_LotList(selRow, 2), grid_LotList(selRow, 5))
+            load_PGM_Check_History(grid_LotList(selRow, 2), grid_LotList(selRow, 5))
+            load_Dipping_Feeder_History(grid_LotList(selRow, 2), grid_LotList(selRow, 5))
+            thread_LoadingFormEnd()
         End If
 
     End Sub

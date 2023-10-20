@@ -528,6 +528,8 @@ Public Class frm_Module_In_Add
                 Dim r_fab_line As String = .Cells(i, fab_line).Value
                 Dim r_lot_option As String = .Cells(i, lot_option).Value
 
+                'If r_lot_no = String.Empty Then Exit For
+
                 Invoke(SetFabUpdate, r_lot_no, r_fab_line, r_lot_option)
 
             Next

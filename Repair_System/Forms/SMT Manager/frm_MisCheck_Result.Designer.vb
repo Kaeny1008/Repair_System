@@ -74,7 +74,7 @@ Partial Class frm_MisCheck_Result
         '
         Me.SplitContainer4.Panel2.Controls.Add(Me.SplitContainer1)
         Me.SplitContainer4.Size = New System.Drawing.Size(1264, 748)
-        Me.SplitContainer4.SplitterDistance = 425
+        Me.SplitContainer4.SplitterDistance = 608
         Me.SplitContainer4.TabIndex = 5
         '
         'grid_LotList
@@ -85,7 +85,7 @@ Partial Class frm_MisCheck_Result
         Me.grid_LotList.Name = "grid_LotList"
         Me.grid_LotList.Rows.Count = 2
         Me.grid_LotList.Rows.DefaultSize = 20
-        Me.grid_LotList.Size = New System.Drawing.Size(425, 654)
+        Me.grid_LotList.Size = New System.Drawing.Size(608, 654)
         Me.grid_LotList.StyleInfo = resources.GetString("grid_LotList.StyleInfo")
         Me.grid_LotList.TabIndex = 3
         '
@@ -102,7 +102,7 @@ Partial Class frm_MisCheck_Result
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(425, 94)
+        Me.Panel1.Size = New System.Drawing.Size(608, 94)
         Me.Panel1.TabIndex = 0
         '
         'tb_Slip_No
@@ -201,7 +201,7 @@ Partial Class frm_MisCheck_Result
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.grid_PartHistory)
-        Me.SplitContainer1.Size = New System.Drawing.Size(835, 748)
+        Me.SplitContainer1.Size = New System.Drawing.Size(652, 748)
         Me.SplitContainer1.SplitterDistance = 212
         Me.SplitContainer1.TabIndex = 0
         '
@@ -255,7 +255,7 @@ Partial Class frm_MisCheck_Result
         Me.grid_PartHistory.Name = "grid_PartHistory"
         Me.grid_PartHistory.Rows.Count = 2
         Me.grid_PartHistory.Rows.DefaultSize = 20
-        Me.grid_PartHistory.Size = New System.Drawing.Size(835, 532)
+        Me.grid_PartHistory.Size = New System.Drawing.Size(652, 532)
         Me.grid_PartHistory.StyleInfo = resources.GetString("grid_PartHistory.StyleInfo")
         Me.grid_PartHistory.TabIndex = 4
         '
