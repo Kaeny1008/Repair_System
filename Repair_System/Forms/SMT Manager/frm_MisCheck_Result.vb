@@ -37,7 +37,7 @@ Public Class frm_MisCheck_Result
             '.Cols(.Cols.Count - 1).StyleNew.TextAlign = TextAlignEnum.LeftCenter
             .AutoSizeCols()
             .ShowCursor = True
-            .SelectionMode = SelectionModeEnum.ListBox
+            .SelectionMode = SelectionModeEnum.Row
         End With
 
         With grid_PartHistory
@@ -197,6 +197,14 @@ Public Class frm_MisCheck_Result
             load_Dipping_Feeder_History(grid_LotList(selRow, 2), grid_LotList(selRow, 5))
             thread_LoadingFormEnd()
         End If
+
+    End Sub
+
+    Private Sub grid_LotList_MouseClick(sender As Object, e As MouseEventArgs) Handles grid_LotList.MouseClick
+
+        C1FlexGrid1.Rows.Count = 1
+        C1FlexGrid2.Rows.Count = 1
+        grid_PartHistory.Rows.Count = 1
 
     End Sub
 
