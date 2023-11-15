@@ -502,7 +502,8 @@ Public Class frm_Module_In_Add
 
         excel_App.Visible = False
 
-        Dim sheet_no As Integer = 1 'Open 하려는 시트 순번을 입력, 시트이름을 입력해도 된다.(우익 자료같은경우)
+        'Dim sheet_no As Integer = 1 'Open 하려는 시트 순번을 입력, 시트이름을 입력해도 된다.(우익 자료같은경우)
+        Dim sheet_no As String = "재공"
 
         With excel_App.ActiveWorkbook.Sheets(sheet_no)
 

@@ -121,7 +121,7 @@ Partial Class Login_Main
         '
         Me.cb_RunProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_RunProgram.FormattingEnabled = True
-        Me.cb_RunProgram.Items.AddRange(New Object() {"Repair System"})
+        Me.cb_RunProgram.Items.AddRange(New Object() {"Repair System", "오삽방지 시스템"})
         Me.cb_RunProgram.Location = New System.Drawing.Point(25, 110)
         Me.cb_RunProgram.Name = "cb_RunProgram"
         Me.cb_RunProgram.Size = New System.Drawing.Size(220, 20)

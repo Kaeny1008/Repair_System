@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2094697A-6D50-4D96-B664-F156DD281547}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>YJ_MMS_MMPS.My.MyApplication</StartupObject>
+    <RootNamespace>YJ_MMS_MMPS</RootNamespace>
+    <AssemblyName>YJ MMS MMPS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>YJ MMS MMPS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>YJ MMS MMPS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>barcode.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL" />
+    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20173.282, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\ComponentOne\WinForms Edition\bin\v2.0\C1.Win.C1FlexGrid.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="RegistryEdit">
+      <HintPath>..\YJ MMS\bin\Debug\RegistryEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\CadData.Designer.vb">
+      <DependentUpon>CadData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CadData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CodeManager.Designer.vb">
+      <DependentUpon>CodeManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CodeManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeviceData.Designer.vb">
+      <DependentUpon>DeviceData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeviceData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeviceData_Report.Designer.vb">
+      <DependentUpon>DeviceData_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeviceData_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeviceData_Sub.Designer.vb">
+      <DependentUpon>DeviceData_Sub.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeviceData_Sub.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\AlarmHistory.Designer.vb">
+      <DependentUpon>AlarmHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\AlarmHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\AllPartsCheckHistory.Designer.vb">
+      <DependentUpon>AllPartsCheckHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\AllPartsCheckHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\BLU_RankList.Designer.vb">
+      <DependentUpon>BLU_RankList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History\History Popup\BLU_RankList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History\HistoryBLUForm.Designer.vb">
+      <DependentUpon>HistoryBLUForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History\HistoryBLUForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History\HistoryForm.Designer.vb">
+      <DependentUpon>HistoryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History\HistoryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Label Print\BLULabelPrint.Designer.vb">
+      <DependentUpon>BLULabelPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Label Print\BLULabelPrint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Label Print\Popup\ModelSearch.Designer.vb">
+      <DependentUpon>ModelSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Label Print\Popup\ModelSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Model Manager\BLUModelManager.Designer.vb">
+      <DependentUpon>BLUModelManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Model Manager\BLUModelManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting\PG_UPLOAD.Designer.vb">
+      <DependentUpon>PG_UPLOAD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting\PG_UPLOAD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting\ProgressbarEffect.designer.vb">
+      <DependentUpon>ProgressbarEffect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting\ProgressbarEffect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Setting\SQL_Connection.Designer.vb">
+      <DependentUpon>SQL_Connection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Setting\SQL_Connection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subform.Designer.vb">
+      <DependentUpon>Subform.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Mainform.Designer.vb">
+      <DependentUpon>Mainform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Mainform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module\ETC.vb" />
+    <Compile Include="Module\FTP_Module.vb" />
+    <Compile Include="Module\MySQL.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reports\Device_Data_RPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Device_Data_RPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Device_Data_RPT_back.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Device_Data_RPT_back.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Device_Data_Sub.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Device_Data_Sub.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\CadData.resx">
+      <DependentUpon>CadData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CodeManager.resx">
+      <DependentUpon>CodeManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeviceData.resx">
+      <DependentUpon>DeviceData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeviceData_Sub.resx">
+      <DependentUpon>DeviceData_Sub.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\History\History Popup\AlarmHistory.resx">
+      <DependentUpon>AlarmHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\History\History Popup\AllPartsCheckHistory.resx">
+      <DependentUpon>AllPartsCheckHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\History\History Popup\BLU_RankList.resx">
+      <DependentUpon>BLU_RankList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\History\HistoryBLUForm.resx">
+      <DependentUpon>HistoryBLUForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\History\HistoryForm.resx">
+      <DependentUpon>HistoryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Label Print\BLULabelPrint.resx">
+      <DependentUpon>BLULabelPrint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Label Print\Popup\ModelSearch.resx">
+      <DependentUpon>ModelSearch.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Mainform.resx">
+      <DependentUpon>Mainform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeviceData_Report.resx">
+      <DependentUpon>DeviceData_Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Model Manager\BLUModelManager.resx">
+      <DependentUpon>BLUModelManager.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting\PG_UPLOAD.resx">
+      <DependentUpon>PG_UPLOAD.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting\ProgressbarEffect.resx">
+      <DependentUpon>ProgressbarEffect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Setting\SQL_Connection.resx">
+      <DependentUpon>SQL_Connection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subform.resx">
+      <DependentUpon>Subform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Device_Data_RPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Device_Data_RPT.vb</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Device_Data_RPT_back.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Device_Data_RPT_back.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Device_Data_Sub.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Device_Data_Sub.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YUJIN_Logo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Box_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceData.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceData1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXCEL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hwbrowser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-x-log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vmware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceData2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="barcode.ico" />
+    <Content Include="Logo_Icon.ico" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\Search_12.png" />
+    <None Include="Resources\printer-blue.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\folder_yellow.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\121_16.png" />
+    <None Include="Resources\102_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

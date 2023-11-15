@@ -25,6 +25,8 @@
 
         frm_Module_In_Add.File_Open_Start3()
 
+        frm_M_Third_Popup_FormClosing(Nothing, Nothing)
+
         Me.Dispose()
 
     End Sub

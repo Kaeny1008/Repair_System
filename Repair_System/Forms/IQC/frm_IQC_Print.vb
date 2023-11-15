@@ -767,6 +767,9 @@ Public Class frm_IQC_Print
                     TB_Lot_No.SelectAll()
                     TB_Qty.Text = String.Empty
                 End If
+                If Not Trim(TB_Insp_Memo.Text) = String.Empty Then
+                    MsgBox("입고 특이사항이 존재 합니다." & vbCrLf & "확인하여 주십시오.", MsgBoxStyle.Information, form_Msgbox_String)
+                End If
             End If
 
             If CB_Parts_Section.Text = "Module" Then
@@ -825,6 +828,7 @@ Public Class frm_IQC_Print
                 c_fab_line = sqlDR("fab_line")
                 c_ww = sqlDR("lot_ww")
                 c_option = sqlDR("lot_option")
+                TB_Insp_Memo.Text = sqlDR("note")
             ElseIf part_section = "PMIC" Or part_section = "RCD" Then
                 c_qty = sqlDR("material_qty")
                 c_product_code = sqlDR("part_no")
