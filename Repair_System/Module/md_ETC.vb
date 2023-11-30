@@ -58,7 +58,7 @@ Module md_ETC
     End Sub
 
     Dim th_LoadingWindow As Thread
-    Dim thread_SleepTime As Integer = 500
+    Dim thread_SleepTime As Integer = 0
 
     Public Sub thread_LoadingFormStart()
 
@@ -84,11 +84,13 @@ Module md_ETC
 
     Private Sub load_LoadWindow()
 
-        'Try
-        frm_LoadingImage.ShowDialog()
-        'Catch ex As ThreadAbortException
-        'Console.WriteLine("(Loading Form) ThreadAbortException : " & ex.Message)
-        'End Try
+        Try
+            frm_LoadingImage.ShowDialog()
+        Catch ex As ThreadAbortException
+            Console.WriteLine("(Loading Form) ThreadAbortException : " & ex.Message)
+        Catch ex2 As Exception
+            Console.WriteLine("(Loading Form) Exception : " & ex2.Message)
+        End Try
 
     End Sub
 
@@ -103,14 +105,14 @@ Module md_ETC
 
     Public Sub thread_LoadingFormEnd()
 
-        'formClose = True
-        If frm_LoadingImage.Visible Then frm_LoadingImage.Dispose()
-        Thread.Sleep(thread_SleepTime)
-        Console.WriteLine("(Loading Form) Aborting thread...")
-        th_LoadingWindow.Abort()
-        Console.WriteLine("(Loading Form) Waiting until thread stop...")
-        th_LoadingWindow.Join()
-        Console.WriteLine("(Loading Form) Finished...")
+        formClose = True
+        'If frm_LoadingImage.Visible Then frm_LoadingImage.Dispose()
+        'Thread.Sleep(thread_SleepTime)
+        'Console.WriteLine("(Loading Form) Aborting thread...")
+        'th_LoadingWindow.Abort()
+        'Console.WriteLine("(Loading Form) Waiting until thread stop...")
+        'th_LoadingWindow.Join()
+        'Console.WriteLine("(Loading Form) Finished...")
 
     End Sub
 End Module

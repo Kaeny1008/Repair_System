@@ -105,7 +105,10 @@
 
     Private Sub BTN_uploadPG_Click(sender As Object, e As EventArgs) Handles BTN_uploadPG.Click
 
-        PG_UPLOAD.ShowDialog()
+        '사용금지 현재 리페어 시스템 디비와 연결되지 않음.
+
+        MsgBox("지원되지 않습니다.", MsgBoxStyle.Information, "YJ MMS MMPS")
+        'PG_UPLOAD.ShowDialog()
 
     End Sub
 

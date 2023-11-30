@@ -48,6 +48,7 @@ Partial Class frm_Main
         Me.btn_Material_In_Add = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_Module_In_Add = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btn_Lot_Residence_Time = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_Lot_Total_Information = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.btn_Material_Lot_Information = New System.Windows.Forms.ToolStripMenuItem()
@@ -83,7 +84,6 @@ Partial Class frm_Main
         Me.btn_OMS_Monthly_Data_Save = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_OMS_Monthly_Data = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btn_Lot_Residence_Time = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -270,6 +270,13 @@ Partial Class frm_Main
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(216, 6)
+        '
+        'btn_Lot_Residence_Time
+        '
+        Me.btn_Lot_Residence_Time.Font = New System.Drawing.Font("맑은 고딕", 9.0!)
+        Me.btn_Lot_Residence_Time.Name = "btn_Lot_Residence_Time"
+        Me.btn_Lot_Residence_Time.Size = New System.Drawing.Size(219, 22)
+        Me.btn_Lot_Residence_Time.Text = "Lot 정체일(현장출고 후)"
         '
         'btn_Lot_Total_Information
         '
@@ -524,12 +531,8 @@ Partial Class frm_Main
         Me.btn_OMS_Monthly_Data.Size = New System.Drawing.Size(183, 22)
         Me.btn_OMS_Monthly_Data.Text = "생산월보 확인"
         '
-        'btn_Lot_Residence_Time
+        'Timer1
         '
-        Me.btn_Lot_Residence_Time.Font = New System.Drawing.Font("맑은 고딕", 9.0!)
-        Me.btn_Lot_Residence_Time.Name = "btn_Lot_Residence_Time"
-        Me.btn_Lot_Residence_Time.Size = New System.Drawing.Size(219, 22)
-        Me.btn_Lot_Residence_Time.Text = "Lot 정체일(현장출고 후)"
         '
         'frm_Main
         '

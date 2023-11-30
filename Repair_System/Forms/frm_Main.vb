@@ -26,7 +26,7 @@ Public Class frm_Main
         'menu_Monthly_Production_Report.Visible = False
         'End If
 
-        Timer1.Interval = 100
+        Timer1.Interval = 1000
         Timer1.Enabled = True
 
     End Sub
@@ -312,6 +312,12 @@ Public Class frm_Main
         frm_Lot_Residence_Time.MdiParent = Me
         If Not frm_Lot_Residence_Time.Visible Then frm_Lot_Residence_Time.Show()
         frm_Lot_Residence_Time.Focus()
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+
 
     End Sub
 End Class
